@@ -14,7 +14,7 @@ MESES_ES = [
     "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
 ]
 COMMUNITY_CODE = "MD"
-PDF_INPUT_PATH = os.path.join(os.path.dirname(__file__), "registro_jornada_laboral.pdf")  # Update path relative to the cli.py location within the package
+PDF_INPUT_PATH = os.path.join(os.path.dirname(__file__), "media", "registro_jornada_laboral.pdf")  # Update path relative to the cli.py location within the package
 
 # PDF Layout Constants
 START_X_BY_PAGE = {

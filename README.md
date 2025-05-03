@@ -8,6 +8,43 @@ Antes de usar el script, **debes modificar manualmente el archivo PDF base** que
 
 Asegúrate de añadir tu nombre y el nombre del investigador/a principal en los campos correspondientes dentro del PDF. El script **no** modifica estos campos.
 
+## Instalación
+
+Sigue estos pasos para instalar y ejecutar el proyecto:
+
+1.  **Clona el repositorio (opcional):**
+    ```bash
+    git clone https://github.com/SSHurtado/ott-timetracker.git
+    cd ott-timetracker
+    ```
+    Si ya tienes el código, simplemente navega al directorio del proyecto.
+
+2.  **Crea un entorno virtual:**
+    Se recomienda encarecidamente usar un entorno virtual para aislar las dependencias del proyecto.
+    ```bash
+    python3 -m venv .venv
+    ```
+
+3.  **Activa el entorno virtual:**
+    *   En macOS/Linux:
+        ```bash
+        source .venv/bin/activate
+        ```
+    *   En Windows:
+        ```bash
+        .\.venv\Scripts\activate
+        ```
+    Sabrás que está activo porque verás `(.venv)` al principio de tu línea de comandos.
+
+4.  **Instala las dependencias y el paquete:**
+    ```bash
+    pip install .
+    ```
+    *Nota: Si quieres modificar el código fuente y que los cambios se reflejen inmediatamente, usa `pip install -e .` en su lugar.*
+
+5.  **¡Listo!** Ahora puedes ejecutar el comando `ott_timetracker` desde tu terminal (asegúrate de que el entorno virtual esté activado).
+
+
 ## Ejemplo de Uso
 
 ```bash
