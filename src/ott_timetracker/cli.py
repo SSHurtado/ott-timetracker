@@ -285,6 +285,10 @@ def generate_filled_pdf(config, args):
 
         writer.add_page(page)  # Add the (potentially merged) page
 
+    # Rotate all pages 90 degrees clockwise after adding them
+    for page in writer.pages:
+        page.rotate(90)  # Rotate clockwise
+
     try:
         with open(config["pdf_output_path"], "wb") as f:
             writer.write(f)
