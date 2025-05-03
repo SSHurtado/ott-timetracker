@@ -69,6 +69,23 @@ def setup_configuration_and_data(args):
     pdf_output_path = os.path.join(output_dir, f"registro_jornada_laboral_{nombre_mes}{year}.pdf")
 
     spain_holidays = holidays.country_holidays('ES', subdiv=COMMUNITY_CODE, years=year)
+
+    # --- Add Madrid City specific holidays if applicable ---
+    if COMMUNITY_CODE == "MD":
+        try:
+            # San Isidro Labrador
+            san_isidro = datetime.date(year, 5, 15)
+            if san_isidro not in spain_holidays:  # Avoid overwriting if already present
+                spain_holidays[san_isidro] = "San Isidro Labrador (Madrid City)"
+            # Nuestra Señora de la Almudena
+            almudena = datetime.date(year, 11, 9)  # Corrected date for Almudena
+            if almudena not in spain_holidays:
+                spain_holidays[almudena] = "Nuestra Señora de la Almudena (Madrid City)"
+        except ValueError:
+            # Handle potential errors if year is invalid, though unlikely here
+            print(f"Advertencia: No se pudo añadir festivos específicos de Madrid para el año {year}.", file=sys.stderr)
+    # --- End Madrid City specific holidays ---
+
     festivos = {d.day for d in spain_holidays if d.month == month}
 
     # Procesar incidencias
