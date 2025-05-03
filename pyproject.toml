@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ott-timetracker"
+version = "0.1.0"
+description = "Generates filled PDF timesheets based on provided parameters."
+readme = "README.md" # Optional: Add a README file later
+requires-python = ">=3.8"
+license = { text = "MIT License" } # Or choose another license
+authors = [
+  { name = "Your Name", email = "your.email@example.com" }, # Optional: Add your details
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Scheduling",
+    "Environment :: Console",
+]
+dependencies = [
+    "holidays",          # For calculating holidays
+    "PyPDF2",            # For reading the base PDF
+    "reportlab",         # For creating the PDF overlay
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]  # Look for packages in src
+
+[tool.setuptools.package-data]
+"ott_timetracker" = ["*.pdf"] # Include all .pdf files in the ott_timetracker package
+
+[project.urls] # Optional
+"Homepage" = "https://github.com/yourusername/ott-timetracker" # Example URL
+
+[project.scripts]
+# This allows running the tool as `ott-timetracker` after installation
+ott-timetracker = "ott_timetracker.cli:main"
+
