@@ -29,7 +29,7 @@ dependencies = [
 where = ["src"]  # Look for packages in src
 
 [tool.setuptools.package-data]
-"ott_timetracker" = ["*.pdf"] # Include all .pdf files in the ott_timetracker package
+"ott_timetracker" = ["media/*.pdf"]
 
 [project.urls] # Optional
 "Homepage" = "https://github.com/yourusername/ott-timetracker" # Example URL

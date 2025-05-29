@@ -62,6 +62,59 @@ python3 -m ott_timetracker \
 
 **Nota:** Asegúrate de ejecutar el comando desde el directorio raíz del proyecto (`ott-timetracker`) y de tener el entorno virtual activado si es necesario.
 
+## Instalación
+
+Sigue estos pasos para instalar **OTT Timetracker** en tu máquina:
+
+1. **Clonar el repositorio**  
+
+```bash
+git clone https://github.com/SSHurtado/ott-timetracker.git
+cd ott-timetracker
+```
+
+
+2.	**Crear un entorno virtual**
+
+```bash
+python3 -m venv .venv
+```
+￼
+
+3.	**Activar el entorno virtual**
+
+- En macOS/Linux:
+```bash
+source .venv/bin/activate
+```
+
+
+- En Windows (PowerShell/CMD):
+
+```bash
+.\.venv\Scripts\activate
+```
+
+Verás (.venv) al inicio del prompt cuando esté activo.  ￼
+
+4.	**Instalar dependencias y el paquete**
+
+```bash
+pip install .
+```
+
+￼
+
+5.	**Verificar la instalación**
+Ejecuta:
+```bash
+ott_timetracker --help
+```
+
+para comprobar que el comando está disponible y ver todas las opciones.  ￼
+
+
+
 ### Recomendación
 
 Para facilitar la ejecución repetida del comando con diferentes parámetros, se recomienda crear un archivo de script shell (por ejemplo, `run_timetracker.sh`) con el comando y modificar los parámetros según sea necesario antes de ejecutarlo.
